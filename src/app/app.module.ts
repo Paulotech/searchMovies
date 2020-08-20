@@ -9,10 +9,9 @@ import { HeaderComponent } from './header/header.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
-import { SearchComponent } from './header/search/search.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+// import { SearchComponent } from './header/search/search.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,20 +19,17 @@ import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   {
     path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+    loadChildren: () =>
+      import('./pages/pages.module').then((m) => m.PagesModule),
   },
   {
     path: '**',
-    redirectTo: 'pages/home'
-  }
-]; 
+    redirectTo: 'pages/home',
+  },
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SearchComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
@@ -45,10 +41,9 @@ const routes: Routes = [
     MatAutocompleteModule,
 
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
   ],
   providers: [SearchService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

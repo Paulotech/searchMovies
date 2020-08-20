@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "searchMovie"
+  "defaultProject": "searchMovie",
+  "cli": {
+    "analytics": "a55d09a4-d984-4c58-8d7f-6b2db5a55f3d"
+  }
 }

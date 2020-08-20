@@ -10,36 +10,37 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const routes: Routes = [
   {
     path: '**',
-    component: HomeComponent, 
-  }
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-  ],
-  providers: [
-    HomeService
-  ], 
+  declarations: [HomeComponent],
+  providers: [HomeService],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     HttpClientModule,
 
+    FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatInputModule,
     MatIconModule,
     MatAutocompleteModule,
     MatButtonModule,
-    
-    MatCardModule
+    MatExpansionModule,
+    MatCardModule,
+    MatCheckboxModule,
   ],
-  exports: [  ],
+  exports: [],
 })
-export class HomeModule { }
+export class HomeModule {}
